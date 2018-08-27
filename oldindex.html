@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js</title>
+    <script src="vue.js"></script>
+    <style>
+        .demo {
+            width: 100px;
+            height: 100px;
+            background-color: grey;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .red {
+            background-color: red;
+        }
+        .green {
+            background-color: green;
+        }
+        .blue {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="demo" :style="styles"></div>
+        <div class="demo"></div>
+        <div class="demo"></div>
+        <hr>
+        <input type="text" v-model="color">
+        <input type="text" v-model="width">
+    </div>
+    
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                attachRed: false,
+                color: 'gray',
+                width: 100
+            },
+            computed: {
+                styles: function() {
+                    return {
+                        backgroundColor: this.color,
+                        width: this.width + 'px'
+                    }
+                }
+            },
+            methods: {
+                
+            }
+        })
+    </script>
+</body>
+</html>
